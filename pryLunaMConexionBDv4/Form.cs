@@ -12,9 +12,9 @@ using System.Windows.Forms;
 
 namespace pryLunaMConexionBDv4
 {
-    public partial class Form1 : MaterialForm
+    public partial class Form : MaterialForm
     {
-        public Form1()
+        public Form()
         {
             InitializeComponent();
             InterfazPersonalizada();

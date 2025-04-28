@@ -1,6 +1,6 @@
 ﻿namespace pryLunaMConexionBDv4
 {
-    partial class Form1
+    partial class Form
     {
         /// <summary>
         /// Variable del diseñador necesaria.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form));
             this.materialTabControl1 = new MaterialSkin.Controls.MaterialTabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.btnRecargarAgregar = new System.Windows.Forms.Button();
@@ -101,7 +101,7 @@
             this.materialTabControl1.Multiline = true;
             this.materialTabControl1.Name = "materialTabControl1";
             this.materialTabControl1.SelectedIndex = 0;
-            this.materialTabControl1.Size = new System.Drawing.Size(1276, 571);
+            this.materialTabControl1.Size = new System.Drawing.Size(1181, 571);
             this.materialTabControl1.TabIndex = 1;
             // 
             // tabPage1
@@ -121,10 +121,10 @@
             this.tabPage1.Controls.Add(this.lblNombreAgregar);
             this.tabPage1.Controls.Add(this.btnAgregarProducto);
             this.tabPage1.ImageKey = "duplicate_12108396.png";
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Location = new System.Drawing.Point(4, 39);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1268, 545);
+            this.tabPage1.Size = new System.Drawing.Size(1173, 528);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Agregar Producto";
             // 
@@ -169,7 +169,7 @@
             this.txtStockAgregar.AnimateReadOnly = false;
             this.txtStockAgregar.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtStockAgregar.Depth = 0;
-            this.txtStockAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtStockAgregar.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.txtStockAgregar.LeadingIcon = null;
             this.txtStockAgregar.Location = new System.Drawing.Point(154, 278);
             this.txtStockAgregar.MaxLength = 50;
@@ -198,7 +198,7 @@
             this.txtPrecioAgregar.AnimateReadOnly = false;
             this.txtPrecioAgregar.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtPrecioAgregar.Depth = 0;
-            this.txtPrecioAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtPrecioAgregar.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.txtPrecioAgregar.LeadingIcon = null;
             this.txtPrecioAgregar.Location = new System.Drawing.Point(154, 194);
             this.txtPrecioAgregar.MaxLength = 50;
@@ -227,7 +227,7 @@
             this.txtDescripcionAgregar.AnimateReadOnly = false;
             this.txtDescripcionAgregar.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtDescripcionAgregar.Depth = 0;
-            this.txtDescripcionAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtDescripcionAgregar.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.txtDescripcionAgregar.LeadingIcon = null;
             this.txtDescripcionAgregar.Location = new System.Drawing.Point(154, 106);
             this.txtDescripcionAgregar.MaxLength = 50;
@@ -278,7 +278,7 @@
             this.txtNombreAgregar.AnimateReadOnly = false;
             this.txtNombreAgregar.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtNombreAgregar.Depth = 0;
-            this.txtNombreAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtNombreAgregar.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.txtNombreAgregar.LeadingIcon = null;
             this.txtNombreAgregar.Location = new System.Drawing.Point(154, 25);
             this.txtNombreAgregar.MaxLength = 50;
@@ -341,10 +341,10 @@
             this.tabPage2.Controls.Add(this.cmbCategoriaModificar);
             this.tabPage2.Controls.Add(this.btnBuscarIdModificar);
             this.tabPage2.ImageKey = "engineering_18642986.png";
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Location = new System.Drawing.Point(4, 39);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1268, 545);
+            this.tabPage2.Size = new System.Drawing.Size(1173, 528);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Modificar Producto";
             // 
@@ -410,7 +410,7 @@
             this.txtStockModificar.AnimateReadOnly = false;
             this.txtStockModificar.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtStockModificar.Depth = 0;
-            this.txtStockModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtStockModificar.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.txtStockModificar.LeadingIcon = null;
             this.txtStockModificar.Location = new System.Drawing.Point(153, 310);
             this.txtStockModificar.MaxLength = 50;
@@ -439,7 +439,7 @@
             this.txtPrecioModificar.AnimateReadOnly = false;
             this.txtPrecioModificar.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtPrecioModificar.Depth = 0;
-            this.txtPrecioModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtPrecioModificar.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.txtPrecioModificar.LeadingIcon = null;
             this.txtPrecioModificar.Location = new System.Drawing.Point(153, 241);
             this.txtPrecioModificar.MaxLength = 50;
@@ -468,7 +468,7 @@
             this.txtDescripcionModificar.AnimateReadOnly = false;
             this.txtDescripcionModificar.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtDescripcionModificar.Depth = 0;
-            this.txtDescripcionModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtDescripcionModificar.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.txtDescripcionModificar.LeadingIcon = null;
             this.txtDescripcionModificar.Location = new System.Drawing.Point(153, 176);
             this.txtDescripcionModificar.MaxLength = 50;
@@ -497,7 +497,7 @@
             this.txtNombreModificar.AnimateReadOnly = false;
             this.txtNombreModificar.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtNombreModificar.Depth = 0;
-            this.txtNombreModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtNombreModificar.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.txtNombreModificar.LeadingIcon = null;
             this.txtNombreModificar.Location = new System.Drawing.Point(153, 109);
             this.txtNombreModificar.MaxLength = 50;
@@ -526,7 +526,7 @@
             this.txtIdModificar.AnimateReadOnly = false;
             this.txtIdModificar.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtIdModificar.Depth = 0;
-            this.txtIdModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtIdModificar.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.txtIdModificar.LeadingIcon = null;
             this.txtIdModificar.Location = new System.Drawing.Point(153, 31);
             this.txtIdModificar.MaxLength = 50;
@@ -610,9 +610,9 @@
             this.tabPage3.Controls.Add(this.lblIdEliminar);
             this.tabPage3.Controls.Add(this.btnEliminarProductoPorID);
             this.tabPage3.ImageKey = "email_16513874.png";
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Location = new System.Drawing.Point(4, 39);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(1268, 545);
+            this.tabPage3.Size = new System.Drawing.Size(1173, 528);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Eliminar Producto";
             // 
@@ -655,7 +655,7 @@
             this.txtStockEliminar.AnimateReadOnly = false;
             this.txtStockEliminar.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtStockEliminar.Depth = 0;
-            this.txtStockEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtStockEliminar.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.txtStockEliminar.LeadingIcon = null;
             this.txtStockEliminar.Location = new System.Drawing.Point(172, 284);
             this.txtStockEliminar.MaxLength = 50;
@@ -684,7 +684,7 @@
             this.txtPrecioEliminar.AnimateReadOnly = false;
             this.txtPrecioEliminar.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtPrecioEliminar.Depth = 0;
-            this.txtPrecioEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtPrecioEliminar.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.txtPrecioEliminar.LeadingIcon = null;
             this.txtPrecioEliminar.Location = new System.Drawing.Point(172, 217);
             this.txtPrecioEliminar.MaxLength = 50;
@@ -713,7 +713,7 @@
             this.txtDescripcionEliminar.AnimateReadOnly = false;
             this.txtDescripcionEliminar.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtDescripcionEliminar.Depth = 0;
-            this.txtDescripcionEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtDescripcionEliminar.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.txtDescripcionEliminar.LeadingIcon = null;
             this.txtDescripcionEliminar.Location = new System.Drawing.Point(172, 151);
             this.txtDescripcionEliminar.MaxLength = 50;
@@ -742,7 +742,7 @@
             this.txtNombreEliminar.AnimateReadOnly = false;
             this.txtNombreEliminar.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtNombreEliminar.Depth = 0;
-            this.txtNombreEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtNombreEliminar.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.txtNombreEliminar.LeadingIcon = null;
             this.txtNombreEliminar.Location = new System.Drawing.Point(172, 83);
             this.txtNombreEliminar.MaxLength = 50;
@@ -796,7 +796,7 @@
             this.txtIdEliminar.AnimateReadOnly = false;
             this.txtIdEliminar.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtIdEliminar.Depth = 0;
-            this.txtIdEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtIdEliminar.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.txtIdEliminar.LeadingIcon = null;
             this.txtIdEliminar.Location = new System.Drawing.Point(172, 17);
             this.txtIdEliminar.MaxLength = 50;
@@ -868,15 +868,18 @@
             this.imageList1.Images.SetKeyName(20, "Reprecentacion de una Pila.jpg");
             this.imageList1.Images.SetKeyName(21, "Representacion de Listas Simples Entrelazadas.jpg");
             // 
-            // Form1
+            // Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1282, 638);
+            this.ClientSize = new System.Drawing.Size(1187, 638);
             this.Controls.Add(this.materialTabControl1);
             this.DrawerShowIconsWhenHidden = true;
             this.DrawerTabControl = this.materialTabControl1;
-            this.Name = "Form1";
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.Name = "Form";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.materialTabControl1.ResumeLayout(false);
