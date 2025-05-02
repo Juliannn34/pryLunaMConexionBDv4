@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Windows.Forms;
 using MaterialSkin;
 using MaterialSkin.Controls;
 using System.Collections.Generic;
@@ -8,7 +9,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
+
 
 namespace pryLunaMConexionBDv4
 {
@@ -423,7 +424,7 @@ namespace pryLunaMConexionBDv4
         {
             if (ValidarCamposModificarProducto())
             {
-                return; // Si falta algo, no sigue el proceso
+                return; 
             }
 
 
@@ -449,7 +450,7 @@ namespace pryLunaMConexionBDv4
             if (exito)
             {
                 MessageBox.Show("Producto modificado correctamente.");
-                dgvModificar.DataSource = conexion.ObtenerProductos(); // si querés refrescar la grilla
+                dgvModificar.DataSource = conexion.ObtenerProductos(); 
             }
             else
             {
@@ -459,6 +460,40 @@ namespace pryLunaMConexionBDv4
             RecargarGrilla();
         }
 
+
+        private void btnBuscarIdEliminar_Click(object sender, EventArgs e)
+        {
+            int Id = Convert.ToInt16(txtIdEliminar.Text);
+
+
+            clsConexionBD conectarBD = new clsConexionBD();
+
+            conectarBD.BuscarIDProducto(Id, txtNombreEliminar, txtDescripcionEliminar, txtPrecioEliminar,
+                txtStockEliminar, cmbCategoriaEliminar);
+
+
+
+            if (int.TryParse(txtIdEliminar.Text, out Id))
+            {
+
+
+                conectarBD.BuscarIDProducto(Id, txtNombreEliminar, txtDescripcionEliminar, txtPrecioEliminar, txtStockEliminar, cmbCategoriaEliminar);
+
+                // Llamamos al controlador después de que los campos se llenen
+                Controlador();
+
+                // Si no se encuentra el producto
+                if (string.IsNullOrWhiteSpace(txtNombreEliminar.Text))
+                {
+                    MessageBox.Show("No se encontró un producto con ese ID.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Por favor, ingresa un ID válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+        }
 
         //Eliminar producto
         private void btnEliminarProductoPorID_Click(object sender, EventArgs e)
@@ -471,9 +506,10 @@ namespace pryLunaMConexionBDv4
 
         //-------------------------------------------------------------------------------------------------------------
 
+        //Botones Extras//
+
+
         //Botones de recarga de grilla//
-
-
 
         private void btnRecargarAgregar_Click(object sender, EventArgs e)
         {
@@ -553,5 +589,8 @@ namespace pryLunaMConexionBDv4
 
             }
         }
+
+        //-------------------------------------------------------------------------------------------------------------
+
     }
 }

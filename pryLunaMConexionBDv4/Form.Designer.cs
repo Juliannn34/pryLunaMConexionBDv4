@@ -79,6 +79,7 @@
             this.lblIdEliminar = new MaterialSkin.Controls.MaterialLabel();
             this.btnEliminarProductoPorID = new MaterialSkin.Controls.MaterialButton();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.btnBuscarIdEliminar = new MaterialSkin.Controls.MaterialButton();
             this.materialTabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAgregar)).BeginInit();
@@ -594,6 +595,7 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.btnBuscarIdEliminar);
             this.tabPage3.Controls.Add(this.cmbCategoriaEliminar);
             this.tabPage3.Controls.Add(this.lblCategoriaEliminar);
             this.tabPage3.Controls.Add(this.txtStockEliminar);
@@ -868,6 +870,26 @@
             this.imageList1.Images.SetKeyName(20, "Reprecentacion de una Pila.jpg");
             this.imageList1.Images.SetKeyName(21, "Representacion de Listas Simples Entrelazadas.jpg");
             // 
+            // btnBuscarIdEliminar
+            // 
+            this.btnBuscarIdEliminar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnBuscarIdEliminar.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.btnBuscarIdEliminar.Depth = 0;
+            this.btnBuscarIdEliminar.HighEmphasis = true;
+            this.btnBuscarIdEliminar.Icon = null;
+            this.btnBuscarIdEliminar.Location = new System.Drawing.Point(283, 23);
+            this.btnBuscarIdEliminar.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnBuscarIdEliminar.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnBuscarIdEliminar.Name = "btnBuscarIdEliminar";
+            this.btnBuscarIdEliminar.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.btnBuscarIdEliminar.Size = new System.Drawing.Size(95, 36);
+            this.btnBuscarIdEliminar.TabIndex = 24;
+            this.btnBuscarIdEliminar.Text = "Buscar ID";
+            this.btnBuscarIdEliminar.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btnBuscarIdEliminar.UseAccentColor = false;
+            this.btnBuscarIdEliminar.UseVisualStyleBackColor = true;
+            this.btnBuscarIdEliminar.Click += new System.EventHandler(this.btnBuscarIdEliminar_Click);
+            // 
             // Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -947,6 +969,7 @@
         private MaterialSkin.Controls.MaterialLabel lblIdEliminar;
         private MaterialSkin.Controls.MaterialButton btnEliminarProductoPorID;
         private System.Windows.Forms.ImageList imageList1;
+        private MaterialSkin.Controls.MaterialButton btnBuscarIdEliminar;
     }
 }
 
