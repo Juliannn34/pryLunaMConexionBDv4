@@ -173,8 +173,8 @@
             this.btnIniciarSesion.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnIniciarSesion.Name = "btnIniciarSesion";
             this.btnIniciarSesion.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.btnIniciarSesion.Size = new System.Drawing.Size(158, 36);
-            this.btnIniciarSesion.TabIndex = 0;
+            this.btnIniciarSesion.Size = new System.Drawing.Size(128, 36);
+            this.btnIniciarSesion.TabIndex = 2;
             this.btnIniciarSesion.Text = "Iniciar Sesion";
             this.btnIniciarSesion.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.btnIniciarSesion.UseAccentColor = false;
@@ -211,7 +211,7 @@
             this.txtUsuario.Multiline = false;
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(269, 50);
-            this.txtUsuario.TabIndex = 2;
+            this.txtUsuario.TabIndex = 0;
             this.txtUsuario.Text = "";
             this.txtUsuario.TrailingIcon = null;
             // 
@@ -250,6 +250,7 @@
             this.Controls.Add(this.txtContraseña);
             this.Controls.Add(this.btnIniciarSesion);
             this.Name = "frmLogin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmLogin";
             this.Load += new System.EventHandler(this.frmLogin_Load);
             this.ResumeLayout(false);

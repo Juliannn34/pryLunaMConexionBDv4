@@ -111,32 +111,23 @@ namespace pryLunaMConexionBDv4
 
         public bool ModificarProducto(clsProductos producto)
         {
-            string consulta = "UPDATE Productos SET Nombre = @Nombre, Descripcion = @Descripcion, Precio = @Precio, Stock = @Stock, CategoriaId = @CategoriaId WHERE Codigo = @Codigo";
-
-            try
+            using (SqlConnection conn = new SqlConnection(cadenaConexion))
             {
-                using (coneccionBaseDatos = new SqlConnection(cadenaConexion))
-                {
-                    coneccionBaseDatos.Open();
-                    comandoBaseDatos = new SqlCommand(consulta, coneccionBaseDatos);
+                string query = "UPDATE Productos SET Nombre = @Nombre, Descripcion = @Desc, Precio = @Precio, Stock = @Stock, CategoriaID = @CategoriaID WHERE Codigo = @Codigo";
 
-                    comandoBaseDatos.Parameters.AddWithValue("@Codigo", producto.Codigo);
-                    comandoBaseDatos.Parameters.AddWithValue("@Nombre", producto.Nombre);
-                    comandoBaseDatos.Parameters.AddWithValue("@Descripcion", producto.Desc);
-                    comandoBaseDatos.Parameters.AddWithValue("@Precio", producto.Precio);
-                    comandoBaseDatos.Parameters.AddWithValue("@Stock", producto.Stock);
-                    comandoBaseDatos.Parameters.AddWithValue("@CategoriaId", producto.CategoriaID);
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@Nombre", producto.Nombre);
+                cmd.Parameters.AddWithValue("@Desc", producto.Desc);
+                cmd.Parameters.AddWithValue("@Precio", producto.Precio);
+                cmd.Parameters.AddWithValue("@Stock", producto.Stock);
+                cmd.Parameters.AddWithValue("@CategoriaID", producto.CategoriaID);
+                cmd.Parameters.AddWithValue("@Codigo", producto.Codigo);
 
-                    return comandoBaseDatos.ExecuteNonQuery() > 0;
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error al modificar producto: " + ex.Message);
-                return false;
+                conn.Open();
+                int filasAfectadas = cmd.ExecuteNonQuery();
+                return filasAfectadas > 0;
             }
         }
-
 
 
         //Eliminar datos de la tabla productos

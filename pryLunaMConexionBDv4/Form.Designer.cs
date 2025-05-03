@@ -63,6 +63,7 @@
             this.cmbCategoriaModificar = new MaterialSkin.Controls.MaterialComboBox();
             this.btnBuscarIdModificar = new MaterialSkin.Controls.MaterialButton();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.btnBuscarIdEliminar = new MaterialSkin.Controls.MaterialButton();
             this.cmbCategoriaEliminar = new MaterialSkin.Controls.MaterialComboBox();
             this.lblCategoriaEliminar = new MaterialSkin.Controls.MaterialLabel();
             this.txtStockEliminar = new MaterialSkin.Controls.MaterialTextBox();
@@ -79,7 +80,6 @@
             this.lblIdEliminar = new MaterialSkin.Controls.MaterialLabel();
             this.btnEliminarProductoPorID = new MaterialSkin.Controls.MaterialButton();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.btnBuscarIdEliminar = new MaterialSkin.Controls.MaterialButton();
             this.materialTabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAgregar)).BeginInit();
@@ -147,9 +147,14 @@
             // 
             // dgvAgregar
             // 
+            this.dgvAgregar.AllowUserToAddRows = false;
+            this.dgvAgregar.AllowUserToDeleteRows = false;
             this.dgvAgregar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAgregar.Location = new System.Drawing.Point(458, 25);
+            this.dgvAgregar.MultiSelect = false;
             this.dgvAgregar.Name = "dgvAgregar";
+            this.dgvAgregar.ReadOnly = true;
+            this.dgvAgregar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvAgregar.Size = new System.Drawing.Size(664, 415);
             this.dgvAgregar.TabIndex = 6;
             // 
@@ -367,9 +372,14 @@
             // 
             // dgvModificar
             // 
+            this.dgvModificar.AllowUserToAddRows = false;
+            this.dgvModificar.AllowUserToDeleteRows = false;
             this.dgvModificar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvModificar.Location = new System.Drawing.Point(432, 31);
+            this.dgvModificar.MultiSelect = false;
             this.dgvModificar.Name = "dgvModificar";
+            this.dgvModificar.ReadOnly = true;
+            this.dgvModificar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvModificar.Size = new System.Drawing.Size(686, 397);
             this.dgvModificar.TabIndex = 8;
             this.dgvModificar.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvModificar_CellClick);
@@ -618,6 +628,26 @@
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Eliminar Producto";
             // 
+            // btnBuscarIdEliminar
+            // 
+            this.btnBuscarIdEliminar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnBuscarIdEliminar.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.btnBuscarIdEliminar.Depth = 0;
+            this.btnBuscarIdEliminar.HighEmphasis = true;
+            this.btnBuscarIdEliminar.Icon = null;
+            this.btnBuscarIdEliminar.Location = new System.Drawing.Point(283, 23);
+            this.btnBuscarIdEliminar.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnBuscarIdEliminar.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnBuscarIdEliminar.Name = "btnBuscarIdEliminar";
+            this.btnBuscarIdEliminar.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.btnBuscarIdEliminar.Size = new System.Drawing.Size(95, 36);
+            this.btnBuscarIdEliminar.TabIndex = 24;
+            this.btnBuscarIdEliminar.Text = "Buscar ID";
+            this.btnBuscarIdEliminar.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btnBuscarIdEliminar.UseAccentColor = false;
+            this.btnBuscarIdEliminar.UseVisualStyleBackColor = true;
+            this.btnBuscarIdEliminar.Click += new System.EventHandler(this.btnBuscarIdEliminar_Click);
+            // 
             // cmbCategoriaEliminar
             // 
             this.cmbCategoriaEliminar.AutoResize = false;
@@ -786,9 +816,14 @@
             // 
             // dgvEliminar
             // 
+            this.dgvEliminar.AllowUserToAddRows = false;
+            this.dgvEliminar.AllowUserToDeleteRows = false;
             this.dgvEliminar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvEliminar.Location = new System.Drawing.Point(423, 33);
+            this.dgvEliminar.MultiSelect = false;
             this.dgvEliminar.Name = "dgvEliminar";
+            this.dgvEliminar.ReadOnly = true;
+            this.dgvEliminar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvEliminar.Size = new System.Drawing.Size(682, 346);
             this.dgvEliminar.TabIndex = 2;
             this.dgvEliminar.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEliminar_CellClick);
@@ -869,26 +904,6 @@
             this.imageList1.Images.SetKeyName(19, "Reprecentacion de una Cola.jpg");
             this.imageList1.Images.SetKeyName(20, "Reprecentacion de una Pila.jpg");
             this.imageList1.Images.SetKeyName(21, "Representacion de Listas Simples Entrelazadas.jpg");
-            // 
-            // btnBuscarIdEliminar
-            // 
-            this.btnBuscarIdEliminar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnBuscarIdEliminar.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.btnBuscarIdEliminar.Depth = 0;
-            this.btnBuscarIdEliminar.HighEmphasis = true;
-            this.btnBuscarIdEliminar.Icon = null;
-            this.btnBuscarIdEliminar.Location = new System.Drawing.Point(283, 23);
-            this.btnBuscarIdEliminar.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.btnBuscarIdEliminar.MouseState = MaterialSkin.MouseState.HOVER;
-            this.btnBuscarIdEliminar.Name = "btnBuscarIdEliminar";
-            this.btnBuscarIdEliminar.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.btnBuscarIdEliminar.Size = new System.Drawing.Size(95, 36);
-            this.btnBuscarIdEliminar.TabIndex = 24;
-            this.btnBuscarIdEliminar.Text = "Buscar ID";
-            this.btnBuscarIdEliminar.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.btnBuscarIdEliminar.UseAccentColor = false;
-            this.btnBuscarIdEliminar.UseVisualStyleBackColor = true;
-            this.btnBuscarIdEliminar.Click += new System.EventHandler(this.btnBuscarIdEliminar_Click);
             // 
             // Form
             // 

@@ -422,42 +422,67 @@ namespace pryLunaMConexionBDv4
         //Modificar producto
         private void btnModificarProducto_Click(object sender, EventArgs e)
         {
-            if (ValidarCamposModificarProducto())
+            try
             {
-                return; 
+                // Verificar que el ID sea correcto
+                if (!int.TryParse(txtIdModificar.Text, out int idProducto))
+                {
+                    MessageBox.Show("Por favor, ingresa un ID válido.", "Error de entrada", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                // Validar Precio
+                if (!decimal.TryParse(txtPrecioModificar.Text, out decimal precioProducto))
+                {
+                    MessageBox.Show("Por favor, ingresa un precio válido.", "Error de entrada", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                // Validar Stock
+                if (!int.TryParse(txtStockModificar.Text, out int stockProducto))
+                {
+                    MessageBox.Show("Por favor, ingresa un stock válido.", "Error de entrada", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                // Validar Categoría seleccionada
+                if (cmbCategoriaModificar.SelectedItem == null)
+                {
+                    MessageBox.Show("Por favor, selecciona una categoría.", "Error de entrada", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                // Crear el producto con los datos actuales (no importa si el texto es el mismo o no)
+                clsProductos producto = new clsProductos
+                {
+                    Codigo = idProducto,
+                    Nombre = txtNombreModificar.Text.Trim(),
+                    Desc = txtDescripcionModificar.Text.Trim(),
+                    Precio = precioProducto,
+                    Stock = stockProducto,
+                    CategoriaID = Convert.ToInt32(cmbCategoriaModificar.SelectedValue)
+                };
+
+                // Conectar y modificar
+                clsConexionBD conexion = new clsConexionBD();
+                bool exito = conexion.ModificarProducto(producto);
+
+                if (exito)
+                {
+                    MessageBox.Show("Producto modificado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    dgvModificar.DataSource = conexion.ObtenerProductos(); // Actualizar la grilla
+                }
+                else
+                {
+                    MessageBox.Show("No se pudo modificar el producto.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+                RecargarGrilla();
             }
-
-
-            if (!int.TryParse(txtIdModificar.Text, out int idProducto))
+            catch (Exception ex)
             {
-                MessageBox.Show("Por favor, ingresa un ID válido.");
-                return;
+                MessageBox.Show("Ocurrió un error al modificar el producto: " + ex.Message, "Error inesperado", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
-            clsProductos producto = new clsProductos
-            {
-                Codigo = idProducto,
-                Nombre = txtNombreModificar.Text.Trim(),
-                Desc = txtDescripcionModificar.Text.Trim(),
-                Precio = Convert.ToDecimal(txtPrecioModificar.Text.Trim()),
-                Stock = Convert.ToInt32(txtStockModificar.Text.Trim()),
-                CategoriaID = Convert.ToInt32(cmbCategoriaModificar.SelectedValue)
-            };
-
-            clsConexionBD conexion = new clsConexionBD();
-            bool exito = conexion.ModificarProducto(producto);
-
-            if (exito)
-            {
-                MessageBox.Show("Producto modificado correctamente.");
-                dgvModificar.DataSource = conexion.ObtenerProductos(); 
-            }
-            else
-            {
-                MessageBox.Show("No se pudo modificar el producto.");
-            }
-
-            RecargarGrilla();
         }
 
 
