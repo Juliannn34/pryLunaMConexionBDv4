@@ -26,6 +26,7 @@ namespace pryLunaMConexionBDv4
 
         public string nombreBaseDeDatos;
 
+        
 
         //Conectar a la base de datos
         public void ConectarBD()
@@ -47,7 +48,9 @@ namespace pryLunaMConexionBDv4
 
         }
 
+        //-----------------------------------------------------------------------------------
 
+        //Tabla Productos//
 
 
         //obtener datos de la tabla productos
@@ -148,29 +151,7 @@ namespace pryLunaMConexionBDv4
         }
 
 
-        public DataTable ObtenerDatosDeTablaCategorias()
-        {
-            DataTable tablaCategorias = new DataTable();
-
-            try
-            {
-                using (SqlConnection conexion = new SqlConnection(cadenaConexion))
-                {
-                    conexion.Open();
-                    string consulta = "SELECT Id, Nombre FROM Categorias";
-                    SqlDataAdapter adaptador = new SqlDataAdapter(consulta, conexion);
-                    adaptador.Fill(tablaCategorias);
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error al obtener categorías: " + ex.Message);
-            }
-
-            return tablaCategorias;
-        }
-
-
+        //Buscar ID de producto
 
         public void BuscarIDProducto(int ID, MaterialTextBox txtNombre, MaterialTextBox txtDescripcion, MaterialTextBox txtPrecio, MaterialTextBox txtStock, MaterialComboBox cmbCategoria)
         {
@@ -205,7 +186,11 @@ namespace pryLunaMConexionBDv4
 
         //-------------------------------------------------------------------------------------------------
 
+        //Tabla Categorias//
+
+
         // Conexion con tabla categorias 
+
         public DataTable ObtenerCategorias()
         {
             DataTable tablaCategorias = new DataTable();
@@ -228,6 +213,30 @@ namespace pryLunaMConexionBDv4
             return tablaCategorias;
         }
 
+
+        //obtener datos de la tabla categorias
+
+        public DataTable ObtenerDatosDeTablaCategorias()
+        {
+            DataTable tablaCategorias = new DataTable();
+
+            try
+            {
+                using (SqlConnection conexion = new SqlConnection(cadenaConexion))
+                {
+                    conexion.Open();
+                    string consulta = "SELECT Id, Nombre FROM Categorias";
+                    SqlDataAdapter adaptador = new SqlDataAdapter(consulta, conexion);
+                    adaptador.Fill(tablaCategorias);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al obtener categorías: " + ex.Message);
+            }
+
+            return tablaCategorias;
+        }
 
         //-------------------------------------------------------------------------------------------------
 

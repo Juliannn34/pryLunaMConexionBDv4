@@ -9,6 +9,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Collections;
 
 
 namespace pryLunaMConexionBDv4
@@ -21,7 +22,7 @@ namespace pryLunaMConexionBDv4
             InterfazPersonalizada();
         }
 
-        private string cadenaConexion = "Server=localhost;Database=Comercio;Trusted_Connection=True;";
+        
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -349,7 +350,7 @@ namespace pryLunaMConexionBDv4
             {
                 int categoriaId = Convert.ToInt32(cmbCategoriaAgregar.SelectedValue);
 
-                // Create an instance of clsProductos to pass as an argument
+                
                 clsProductos nuevoProducto = new clsProductos
                 {
                     Nombre = txtNombreAgregar.Text,
@@ -359,7 +360,7 @@ namespace pryLunaMConexionBDv4
                     CategoriaID = categoriaId
                 };
 
-                // Pass the clsProductos object to the AgregarProducto method
+                
                 objConexion.AgregarProducto(nuevoProducto);
 
                 // Refrescar grilla después de agregar
@@ -398,7 +399,8 @@ namespace pryLunaMConexionBDv4
             {
 
 
-                conectarBD.BuscarIDProducto(Id, txtNombreModificar, txtDescripcionModificar, txtPrecioModificar, txtStockModificar, cmbCategoriaModificar);
+                conectarBD.BuscarIDProducto(Id, txtNombreModificar, txtDescripcionModificar, txtPrecioModificar,
+                    txtStockModificar, cmbCategoriaModificar);
 
                 // Llamamos al controlador después de que los campos se llenen
                 Controlador();
@@ -422,45 +424,22 @@ namespace pryLunaMConexionBDv4
         //Modificar producto
         private void btnModificarProducto_Click(object sender, EventArgs e)
         {
+            if (!ValidarCamposModificarProducto())
+            {
+                return; // Si falta algo, no sigue el proceso
+            }
+
             try
             {
-                // Verificar que el ID sea correcto
-                if (!int.TryParse(txtIdModificar.Text, out int idProducto))
-                {
-                    MessageBox.Show("Por favor, ingresa un ID válido.", "Error de entrada", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
 
-                // Validar Precio
-                if (!decimal.TryParse(txtPrecioModificar.Text, out decimal precioProducto))
-                {
-                    MessageBox.Show("Por favor, ingresa un precio válido.", "Error de entrada", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-
-                // Validar Stock
-                if (!int.TryParse(txtStockModificar.Text, out int stockProducto))
-                {
-                    MessageBox.Show("Por favor, ingresa un stock válido.", "Error de entrada", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-
-                // Validar Categoría seleccionada
-                if (cmbCategoriaModificar.SelectedItem == null)
-                {
-                    MessageBox.Show("Por favor, selecciona una categoría.", "Error de entrada", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-
-                // Crear el producto con los datos actuales (no importa si el texto es el mismo o no)
                 clsProductos producto = new clsProductos
                 {
-                    Codigo = idProducto,
-                    Nombre = txtNombreModificar.Text.Trim(),
-                    Desc = txtDescripcionModificar.Text.Trim(),
-                    Precio = precioProducto,
-                    Stock = stockProducto,
-                    CategoriaID = Convert.ToInt32(cmbCategoriaModificar.SelectedValue)
+                     Codigo = Convert.ToInt32(txtIdModificar.Text),
+                     Nombre = txtNombreModificar.Text.Trim(),
+                     Desc = txtDescripcionModificar.Text.Trim(),
+                     Precio = Convert.ToDecimal(txtPrecioModificar.Text),
+                     Stock = Convert.ToInt32(txtStockModificar.Text),
+                     CategoriaID = Convert.ToInt32(cmbCategoriaModificar.SelectedValue)
                 };
 
                 // Conectar y modificar
@@ -470,7 +449,7 @@ namespace pryLunaMConexionBDv4
                 if (exito)
                 {
                     MessageBox.Show("Producto modificado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    dgvModificar.DataSource = conexion.ObtenerProductos(); // Actualizar la grilla
+                    dgvModificar.DataSource = conexion.ObtenerProductos(); 
                 }
                 else
                 {
