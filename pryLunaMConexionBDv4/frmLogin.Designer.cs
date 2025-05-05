@@ -51,6 +51,7 @@
             this.txtUsuario = new MaterialSkin.Controls.MaterialTextBox();
             this.lblUsuario = new MaterialSkin.Controls.MaterialLabel();
             this.lblContraseña = new MaterialSkin.Controls.MaterialLabel();
+            this.lblAyudaContraseña = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // dataGridViewTextBoxColumn1
@@ -193,6 +194,7 @@
             this.txtContraseña.MouseState = MaterialSkin.MouseState.OUT;
             this.txtContraseña.Multiline = false;
             this.txtContraseña.Name = "txtContraseña";
+            this.txtContraseña.Password = true;
             this.txtContraseña.Size = new System.Drawing.Size(269, 50);
             this.txtContraseña.TabIndex = 1;
             this.txtContraseña.Text = "";
@@ -239,16 +241,28 @@
             this.lblContraseña.TabIndex = 4;
             this.lblContraseña.Text = "Contraseña:";
             // 
+            // lblAyudaContraseña
+            // 
+            this.lblAyudaContraseña.AutoSize = true;
+            this.lblAyudaContraseña.Font = new System.Drawing.Font("Microsoft Sans Serif", 3.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAyudaContraseña.Location = new System.Drawing.Point(237, 261);
+            this.lblAyudaContraseña.Name = "lblAyudaContraseña";
+            this.lblAyudaContraseña.Size = new System.Drawing.Size(40, 6);
+            this.lblAyudaContraseña.TabIndex = 5;
+            this.lblAyudaContraseña.Text = "DNI del usuario.";
+            // 
             // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(623, 457);
+            this.Controls.Add(this.lblAyudaContraseña);
             this.Controls.Add(this.lblContraseña);
             this.Controls.Add(this.lblUsuario);
             this.Controls.Add(this.txtUsuario);
             this.Controls.Add(this.txtContraseña);
             this.Controls.Add(this.btnIniciarSesion);
+            this.MaximizeBox = false;
             this.Name = "frmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmLogin";
@@ -283,5 +297,6 @@
         private MaterialSkin.Controls.MaterialTextBox txtUsuario;
         private MaterialSkin.Controls.MaterialLabel lblUsuario;
         private MaterialSkin.Controls.MaterialLabel lblContraseña;
+        private System.Windows.Forms.Label lblAyudaContraseña;
     }
 }
